@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <title>菜鸟教程(runoob.com)</title>
-<script src="https://github.com/shalayou/jqueryAjaxStudy/jquery.js">
+<script src="https://github.com/shalayou.io/jqueryAjaxStudy/jquery.js">
 </script>
 <script>
 $(document).ready(function(){
 	$("button").click(function(){
-		$.ajax({url:"uodatediv.html",success:function(result){
+		$.ajax({url:"updatediv.html",success:function(result){
 			$("#div1").html(result);
 		}});
 	});
