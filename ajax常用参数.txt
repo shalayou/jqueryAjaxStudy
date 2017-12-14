@@ -1,0 +1,25 @@
+$.ajax({
+    type:"POST",                    //String 默认为GET
+    timeout:2000,                   //Number 设置超时时间（毫秒）
+    url:"{:U('testOAuthAPI')}",     //String 发送请求的地址
+    dataType:"json",                //String xml、html、script、json、jsonp、jQuery、text
+    data:{'url':url},               //GET请求中将附在URL后；对象必须为key/value形式。如果是数组，jQuery将自动为不同值对应同一名称例如：{foo:["bar1","bar2"]}转换为&foo=bar1&foo=bar2
+    //提交前回调函数（发送请求前可以修改XMLHttpRequest对象的函数）
+    beforeSend:function(XMLHttpRequest){
+        this;   //调用本次Ajax请求时传递的options参数
+    },
+    //请求成功后处理（data可能是xmlDoc、jsonObj、html、text；textStatus（请求状态）：success、error、notimodified、timeout）
+    success:function(data,textStatus){
+        this;   //调用本次Ajax请求时传递的options参数
+        //window.location.href = data.getCodeUrl;
+        /*location.reload();*/
+    },
+    //请求失败后处理（通常情况下textStatus和errorThrown只有其中一个包含信息）
+    error: function (XMLHttpRequest,textStatus,errorThrown) {
+        console.log("error-----------");
+    },
+    //请求完成后处理（请求成功或失败时均调用）
+    complete:function(XMLHttpRequest,textStatus){
+        this;   //调用本次Ajax请求时传递的options参数
+    }
+});
